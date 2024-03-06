@@ -1,0 +1,41 @@
+= Hello World System Architecture
+Pan Vasil <pan-vasil@world.org>
+0.1, Feb 22, 2024: System architecture template
+:toc:
+:icons: font
+:puml-dir: ../../target/puml
+
+Content entered directly below the header but before the first section heading is called the preamble.
+
+== System Overview
+
+This is a paragraph with a *bold* word and an _italicized_ word.
+
+[plantuml,system-context-001,svg,align="center"]
+----
+include::{puml-dir}/structurizr-main-system-context.puml[]
+----
+
+== Container Views
+
+=== Journey 1
+
+[plantuml,journey-1-containters,svg,align="center"]
+----
+include::{puml-dir}/structurizr-journey-1-containters.puml[]
+----
+
+=== Journey 2
+
+[plantuml,journey-2-containters,svg,align="center"]
+----
+include::{puml-dir}/structurizr-journey-2-containters.puml[]
+----
+
+=== A Service Component diagram
+
+[plantuml,a-service-components,svg,align="center"]
+----
+include::{puml-dir}/structurizr-a-service-components.puml[]
+----
+
