@@ -31,7 +31,7 @@ jobs:
         with:
           image: structurizr/cli:latest
           options: -v ${{ github.workspace }}:/var/www
-          run: '/usr/local/structurizr-cli/structurizr.sh export -w src/model/workspace.dsl -f plantuml/c4plantuml -o target/puml'
+          run: '/usr/local/structurizr-cli/structurizr.sh export -w /var/www/src/model/workspace.dsl -f plantuml/c4plantuml -o /var/www/target/puml'
 
       # Generates html from adoc files injecting puml diagrams
       - name: Generates content
