@@ -43,16 +43,6 @@ jobs:
         uses: tonynv/asciidoctor-action@master
         with:
           program: 'asciidoctor -r asciidoctor-diagram -D target/adoc src/doc/index.adoc'
-      
-      - name: Fix permissions
-        run: |
-          chmod -c -R +rX "target/" | while read line; do
-            echo "::warning title=Invalid file permissions automatically fixed::$line"
-          done    
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: target/adoc
 
       # Deploy pages
       - name: Deploy pages
