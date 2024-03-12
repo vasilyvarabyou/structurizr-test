@@ -28,10 +28,10 @@ jobs:
       # Generates Plant UML diagrams from workspace
       - name: Export Structurizr workspace
         uses: addnab/docker-run-action@v3
-          with:
-            image: structurizr/cli:latest
-            options: -v ${{ github.workspace }}:/var/www
-            run: 'structurizr export -w src/model/workspace.dsl -f plantuml/c4plantuml -o target/puml'
+        with:
+          image: structurizr/cli:latest
+          options: -v ${{ github.workspace }}:/var/www
+          run: 'structurizr export -w src/model/workspace.dsl -f plantuml/c4plantuml -o target/puml'
 
       # Generates html from adoc files injecting puml diagrams
       - name: Generates content
