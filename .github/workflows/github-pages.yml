@@ -43,7 +43,13 @@ jobs:
         uses: tonynv/asciidoctor-action@master
         with:
           program: 'asciidoctor -r asciidoctor-diagram -D target/adoc src/doc/index.adoc'
-
+      
+      # Publish pages artifact
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: target/adoc
+      
       # Deploy pages
       - name: Deploy pages
         uses: actions/deploy-pages@v4
