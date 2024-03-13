@@ -7,6 +7,10 @@ workspace "Hello World System" {
             !include external
         }
 
+        users = group "User Roles" {
+            !include userroles
+        }
+
         system = softwareSystem "Software System" "Our Cool Processor Burning Tool" {
             adaptors = group "Adaptors" {
                 !include components/adaptors
@@ -29,6 +33,7 @@ workspace "Hello World System" {
 
         properties {
             c4plantuml.legend false
+            c4plantuml.tags   true
         }
 
         styles {
@@ -40,13 +45,17 @@ workspace "Hello World System" {
                 background  yellow
                 shape RoundedBox
             }
-            element adaptors {
-                background #ff0000
+            element processors {
+                background  deepskyblue
                 shape RoundedBox
             }
-            element Group {
-                color #ff0000
+            element adaptors {
+                background deeppink
+                shape RoundedBox
             }
+            # element Group {
+            #     color #ff0000
+            # }
         }
         
         !include views
