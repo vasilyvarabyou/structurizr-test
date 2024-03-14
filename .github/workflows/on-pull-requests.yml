@@ -1,0 +1,38 @@
+name: CI
+
+# Controls when the workflow will run
+on:
+    pull_request:
+        branches: [ "main" ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+    # This workflow contains a single job called "build"
+    build:
+      # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+      # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+      permissions:
+        contents: read
+        pages: write
+        id-token: write
+  
+      # Steps represent a sequence of tasks that will be executed as part of the job
+      steps:
+        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        - uses: actions/checkout@v3
+  
+        # Generates Plant UML diagrams from workspace
+        - name: Export Structurizr workspace
+          uses: addnab/docker-run-action@v3
+          with:
+            image: structurizr/cli:latest
+            options: -v ${{ github.workspace }}:/var/www
+            run: '/usr/local/structurizr-cli/structurizr.sh export -w /var/www/src/model/workspace.dsl -f plantuml/c4plantuml -o /var/www/target/puml'
+  
+        # Generates html from adoc files injecting puml diagrams
+        - name: Generates content
+          uses: tonynv/asciidoctor-action@master
+          with:
+            program: 'asciidoctor -r asciidoctor-diagram -D target/adoc src/doc/index.adoc'
+        
