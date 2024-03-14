@@ -1,0 +1,15 @@
+=== Journey-2: move calls to adaptors from service layer to processors
+
+==== Context
+
+Just for demo purpose I need to make a change to the architecture for review. I want to assess how it looks like and to understand is it comfortable enough to use in real life projects.
+
+==== Decision
+
+That's why we remove calls from *A-Service* to *The Adaptor* and *3rd Adaptor* and make it from *A Processor*. Also I have eventually decided that I want to have a look how call chain will look like. That's why I have decided to introduce *2nd Processor*
+
+Also I've decided to update documentation structure to introduce ADRs.
+
+==== Consequences
+
+I expect to get a sample pull request and updated diagrams.

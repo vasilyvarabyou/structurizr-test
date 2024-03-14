@@ -1,7 +1,7 @@
 = Hello World System Architecture
 Pan Vasil <pan-vasil@world.org>
 0.1, Feb 22, 2024: System architecture template
-:toc:
+:toc: left
 :icons: font
 :puml-dir: ../../target/puml
 
@@ -38,4 +38,8 @@ include::{puml-dir}/structurizr-journey-2-containters.puml[]
 ----
 include::{puml-dir}/structurizr-a-service-components.puml[]
 ----
+
+== Arcitecture Decision Records
+
+include::decisions/index.adoc[Architecture Decision Records]
 
