@@ -12,6 +12,8 @@ workspace "Hello World System" {
         }
 
         system = softwareSystem "Software System" "Our Cool Processor Burning Tool" {
+            tags scoped
+
             adaptors = group "Adaptors" {
                 !include components/adaptors
             }
@@ -42,16 +44,19 @@ workspace "Hello World System" {
                 shape Person
             }
             element services {
-                background  yellow
+                background  LightYellow
                 shape RoundedBox
             }
             element processors {
-                background  deepskyblue
+                background  LightSkyBlue
                 shape RoundedBox
             }
             element adaptors {
-                background deeppink
+                background LightPink
                 shape RoundedBox
+            }
+            element scoped {
+                background Yellow
             }
             # element Group {
             #     color #ff0000
