@@ -1,0 +1,13 @@
+=== Journey-2: agent calls to Another Service
+
+==== Context
+
+This is to create smallest PR introducing new interaction.
+
+==== Decision
+
+Let's *Agent* make a call to *Another Service*.
+
+==== Consequences
+
+Will see that call on Journey-2 diagram.

@@ -1,1 +1,2 @@
 include::0001-update-journey-2.adoc[Update Journey 2]
+include::0002-update-journey-2.adoc[Update Journey 2: Agent now makes a call to Another Service]
